@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cryptoscan"
+version = "1.0.0"
+description = "Find cryptographic constants (AES, SHA-2, MD5, CRC-32, ChaCha20, Blowfish) in binaries, with a Ghidra script"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Ruslan Mustafaev" }]
+keywords = ["reverse-engineering", "ghidra", "crypto", "malware-analysis", "firmware", "security"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Security",
+    "Topic :: Software Development :: Disassemblers",
+]
+
+[project.scripts]
+cryptoscan = "cryptoscan.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["cryptoscan"]
